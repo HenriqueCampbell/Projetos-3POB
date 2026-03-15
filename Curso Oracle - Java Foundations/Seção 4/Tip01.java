@@ -1,5 +1,10 @@
 public class Tip01 {
+
     public static void main(String[] args) {
+        calcularValorFinal();
+    }
+
+    public static void calcularValorFinal() {
         int[] custos = {10, 12, 9, 8, 7, 15, 11, 30};
         double imposto = 0.05;
         double gorjeta = 0.15;
@@ -9,7 +14,8 @@ public class Tip01 {
             valorFinal = custos[i] * (1 + imposto + gorjeta);
             System.out.println("Pessoa " + (i + 1) + " deve pagar: R$" + String.format("%.2f", valorFinal));
         }
-
+    }
+}
         // Encontre o valor que cada pessoa deve pagar após imposto(5%) e gorjeta(15%)
         
         /*Esse é o valor que cada pessoa deve pagar antes do imposto e gorjeta:
@@ -22,6 +28,5 @@ public class Tip01 {
         Pessoa 7: R$11.00
         Pessoa 8: R$30.00
         */
-        
-    }    
-}
+
+       // Esse código usou só static para criar o método. O ideal é criar um projeto maior e criar uma classe para cada pedacinha de código e depois juntar tudo no main. Daqui em diante os próximos exercícios provavelmente serão feitos assim, e dentro de um repostório específico para o exercício dentro de cada seção.
