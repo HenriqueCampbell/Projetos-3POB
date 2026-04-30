@@ -1,7 +1,6 @@
 public class Main {
     public static void main(String[] args) {
         // Testando a Conta Corrente
-        System.out.println("--- TESTE CONTA CORRENTE ---");
         ContaCorrente cc = new ContaCorrente("Henrique", 100.0, 123, 001, 500.0);
         
         System.out.println("Saldo inicial: " + cc.getSaldo());
@@ -15,7 +14,6 @@ public class Main {
         System.out.println("Saldo após tentar sacar 300 (não deve mudar): " + cc.getSaldo());
 
         System.out.println("\n--- TESTE CONTA POUPANÇA ---");
-        // Testando a Conta Poupança (com taxa de 2.00 por saque)
         ContaPoupanca cp = new ContaPoupanca("Henrique", 100.0, 456, 001, 2.0);
         
         System.out.println("Saldo inicial: " + cp.getSaldo());
@@ -26,6 +24,6 @@ public class Main {
         
         // Tentando sacar mais do que tem (Poupança não tem limite!)
         cp.sacar(60.0); 
-        System.out.println("Saldo após tentar sacar 60 (deve continuar 48): " + cp.getSaldo());
+        System.out.println("Saldo após tentar sacar 60 (é para dar erro): " + cp.getSaldo());
     }
 }
