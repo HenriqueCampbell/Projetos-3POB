@@ -1,10 +1,9 @@
 package view;
 
 import controller.FrotaController;
-import model.Veiculo;
-import model.Carro;
-
 import java.util.Scanner;
+import model.Carro;
+import model.Veiculo;
 
 public class MainView {
     public static void main(String[] args) {
@@ -63,4 +62,26 @@ public class MainView {
                         for (Veiculo v : controller.getFrota()) {
                             String tipo = v instanceof Carro ? "Carro" : "Caminhão";
                             System.out.println("[" + tipo + "] Placa: " + v.getPlaca() + 
-                                               " |
+                                               " | Custo Fixo: R$" + v.getCustoFixo() + 
+                                               " | Custo Total Final: R$" + v.calcularCustoTotal());
+                        }
+                    }
+                    break;
+
+                case 4:
+                    double totalImpostos = controller.calcularTotalImpostos();
+                    System.out.printf(">>> Total de IPVA acumulado da frota: R$ %.2f\n", totalImpostos);
+                    break;
+
+                case 5:
+                    System.out.println("Encerrando o sistema... Até mais!");
+                    break;
+
+                default:
+                    System.out.println("Opção inválida no menu.");
+            }
+        } while (opcao != 5);
+
+        scanner.close();
+    }
+}
